@@ -1,0 +1,365 @@
+/* client/src/App.css */
+html,
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #eeeeee;
+  font-family: "Oswald", Arial, sans-serif; /* Apply Oswald font */
+}
+
+.App {
+  font-family: "Oswald", Arial, sans-serif; /* Apply Oswald font */
+  text-align: center;
+}
+
+.header {
+  margin-bottom: 20px;
+}
+
+.session-section {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 20px;
+}
+
+.create-session,
+.join-session {
+  width: 300px;
+  padding: 20px;
+  border: 1px solid #ccc;
+  background-color: #f0f0f0;
+}
+
+.create-session h2,
+.join-session h2 {
+  margin-bottom: 10px;
+  font-weight: lighter;
+}
+
+.create-session button,
+.join-session button {
+  margin-top: 10px;
+}
+
+.table {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.cards-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.estimates {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 40px;
+}
+
+.estimate-card {
+  width: 120px;
+  height: 180px;
+  background-color: #007bff;
+  border-radius: 10px;
+  margin: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-size: 44px;
+  font-weight: bold;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  text-align: center;
+  /* animation: flip 0.6s ease;
+  transform-style: preserve-3d; */
+}
+
+.average-closest-container {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  display: flex;
+  gap: 10px;
+}
+
+.share-button {
+  background-color: #007bff; /* Green background */
+  border: none;
+  color: white;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  transition-duration: 0.4s;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.share-button:hover {
+  background-color: white;
+  color: rgb(83, 83, 83);
+  border: none;
+}
+
+/* Ensure the icon is vertically centered within the button */
+.share-button .fa-share-alt {
+  vertical-align: middle;
+  margin-right: 5px;
+}
+
+/* client/src/App.css */
+@keyframes flip {
+  0% {
+    transform: perspective(400px) rotateY(0);
+  }
+  50% {
+    transform: perspective(400px) rotateY(90deg);
+  }
+  100% {
+    transform: perspective(400px) rotateY(0);
+  }
+}
+
+.average-card,
+.closest-card {
+  width: 60px;
+  height: 90px;
+  background-color: #79baff;
+  color: rgb(255, 255, 255);
+  padding: 5px;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(128, 128, 128, 0.1);
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  animation: flip 0.6s ease;
+  transform-style: preserve-3d;
+}
+
+.small-text {
+  font-size: 12px;
+}
+
+.large-number {
+  font-size: 24px;
+  font-weight: bold;
+  margin-top: 5px;
+}
+
+.card-deck {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 30px;
+}
+
+.card {
+  width: 80px;
+  height: 120px;
+  background-color: #ffffff;
+  border-radius: 10px;
+  margin: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: rgb(83, 83, 83);
+  font-size: 24px;
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease-in-out;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
+.card.selected {
+  background-color: #007bff;
+  color: rgb(255, 255, 255);
+}
+
+.session-details {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background-color: #79baff;
+  color: rgb(255, 255, 255);
+  padding: 12px 24px;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  z-index: 100;
+}
+
+.session-info {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.session-info h2 {
+  margin: 0;
+  font-size: 18px;
+}
+
+.user-name {
+  font-size: 14px;
+  margin-top: 5px;
+}
+
+.body {
+  margin: 0;
+  font-family: "Oswald", Arial, sans-serif; /* Apply Oswald font */
+  background-color: #f0f0f0;
+}
+
+.session-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  padding: 20px;
+}
+
+.logo {
+  width: 450px;
+  margin-bottom: 80px;
+}
+
+/* General input styling */
+.input {
+  font-family: "Oswald", Arial, sans-serif; /* Apply Oswald font */
+  width: 100%;
+  max-width: 400px;
+  padding: 10px;
+  margin: 10px 0;
+  border: 0px solid #ffffff;
+  border-radius: 5px;
+  font-size: 16px;
+  text-align: center;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1); /* Subtle blue glow */
+  transition: box-shadow 0.3s ease-in-out; /* Smooth transition */
+}
+
+/* Input hover state */
+.input:hover {
+  box-shadow: 0 0 10px rgba(189, 189, 189, 0.7); /* Brighter blue glow on hover */
+}
+
+/* Input focus state */
+.input:focus {
+  box-shadow: 0 0 15px rgb(182, 182, 182); /* Brightest blue glow on focus */
+  outline: none; /* Remove default outline */
+}
+
+.input::placeholder {
+  color: #c2c2c2; /* Blue color for the placeholder text */
+  opacity: 1; /* Ensures the color is not translucent */
+}
+
+/* This is for better browser compatibility */
+.input:-ms-input-placeholder {
+  /* Internet Explorer 10-11 */
+  color: #c2c2c2;
+}
+
+.input::-ms-input-placeholder {
+  /* Microsoft Edge */
+  color: #c2c2c2;
+}
+
+.session-card-container {
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+  max-width: 800px;
+  margin-top: 20px;
+  gap: 20px;
+}
+
+.session-card {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  width: 45%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.session-card h2 {
+  margin-top: 0;
+  font-size: 1.5em;
+  color: #a0a0a0;
+}
+
+.session-card .input-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 90%;
+}
+
+.session-title {
+  color: #007bff;
+  font-size: 18px;
+  font-weight: bold;
+  text-align: center;
+  width: 150px;
+  margin-top: 5px;
+  margin-bottom: -10px;
+}
+
+.button-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.button {
+  font-family: "Oswald", Arial, sans-serif; /* Apply Oswald font */
+  padding: 12px 24px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 18px;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.2s ease-in-out;
+  margin: 20px;
+}
+
+.button:hover {
+  background-color: #0056b3;
+  transform: translateY(-3px);
+}
+
+.user-names {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.user-names p {
+  color: #007bff;
+  font-size: 18px;
+  font-weight: bold;
+  text-align: center;
+  width: 150px;
+  margin-top: 5px;
+  margin-bottom: -10px;
+}

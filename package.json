@@ -1,0 +1,54 @@
+{
+  "name": "my-app",
+  "version": "1.0.0",
+  "description": "Your app description",
+  "main": "server/index.js",
+  "scripts": {
+    "start": "node server/index.js",
+    "client-install": "cd client && npm install",
+    "client": "cd client && npm start",
+    "server": "cd server && node index.js",
+    "dev": "concurrently \"npm run client\" \"npm run server\"",
+    "build": "cd client && npm install && npm run build",
+    "heroku-postbuild": "npm run build",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@fortawesome/free-solid-svg-icons": "^6.5.2",
+    "@fortawesome/react-fontawesome": "^0.2.2",
+    "@testing-library/jest-dom": "^5.17.0",
+    "@testing-library/react": "^13.4.0",
+    "@testing-library/user-event": "^13.5.0",
+    "cors": "^2.8.5",
+    "express": "^4.19.2",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "react-helmet": "^6.1.0",
+    "react-scripts": "5.0.1",
+    "react-toastify": "^10.0.5",
+    "socket.io": "^4.7.5",
+    "web-vitals": "^2.1.4"
+  },
+  "engines": {
+    "node": "20.x",
+    "npm": "10.5.1"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "devDependencies": {
+    "supabase": "^1.178.2"
+  }
+}
