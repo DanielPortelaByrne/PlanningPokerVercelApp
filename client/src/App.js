@@ -8,7 +8,9 @@ import { Helmet } from "react-helmet";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
-const socket = io("https://planningpokerpointing.vercel.app/");
+const socket = io(
+  "https://vercel.com/daniels-projects-99ad620f/planning-poker-vercel-app-client/A2jmbLM4XQXib9g8nBK9e2xoZ4uy"
+);
 
 // const socket = io("http://localhost:4000");
 
