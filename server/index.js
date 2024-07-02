@@ -6,12 +6,37 @@ const cors = require("cors");
 const path = require("path");
 
 const app = express();
-app.use(cors());
+// app.use(cors());
+
+// const server = http.createServer(app);
+// const io = new Server(server, {
+//   cors: {
+//     origin: "*",
+//   },
+// });
+
+const allowedOrigins = ["https://planning-poker-pointing.vercel.app"];
+
+app.use(
+  cors({
+    origin: function (origin, callback) {
+      // Check if the origin is in the allowedOrigins array or if it's not set (for server-to-server requests)
+      if (!origin || allowedOrigins.indexOf(origin) !== -1) {
+        callback(null, true);
+      } else {
+        callback(new Error("Not allowed by CORS"));
+      }
+    },
+  })
+);
 
 const server = http.createServer(app);
 const io = new Server(server, {
   cors: {
-    origin: "*",
+    origin: allowedOrigins,
+    methods: ["GET", "POST"],
+    allowedHeaders: ["Content-Type"],
+    credentials: true,
   },
 });
 
