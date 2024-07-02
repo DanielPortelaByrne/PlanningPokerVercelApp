@@ -6,7 +6,11 @@ const cors = require("cors");
 const path = require("path");
 
 const app = express();
-app.use(cors());
+app.use(
+  cors({
+    origin: "https://planningpokerpointing.vercel.app/", // Replace with your new domain
+  })
+);
 
 const server = http.createServer(app);
 const io = new Server(server, {
