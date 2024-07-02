@@ -15,7 +15,7 @@ app.use(
 const server = http.createServer(app);
 const io = new Server(server, {
   cors: {
-    origin: "*",
+    origin: "https://planningpokerpointing.vercel.app/",
   },
 });
 
@@ -24,7 +24,7 @@ let sessions = {};
 // Serve static files from the React app
 app.use(express.static(path.join(__dirname, "../client/build")));
 
-app.get("*", (req, res) => {
+app.get("https://planningpokerpointing.vercel.app/", (req, res) => {
   res.sendFile(path.join(__dirname, "../client/build", "index.html"));
 });
 const generateSessionId = () => {
